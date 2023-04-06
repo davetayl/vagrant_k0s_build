@@ -15,4 +15,8 @@ k0s status
 # Set up tokens for workers.
 k0s token create --role=worker > /vagrant/k0s_worker
 
+# Load k0sctl 
+curl https://github.com/k0sproject/k0sctl/releases/download/v0.15.0/k0sctl-linux-x64 --output /usr/bin/k0sctl
+chmod +x /usr/bin/k0sctl
+
 echo "--- debian11-shepherd.sh - end ---"
