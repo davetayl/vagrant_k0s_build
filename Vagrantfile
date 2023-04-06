@@ -1,4 +1,15 @@
 Vagrant.configure("2") do |config|
+    config.vm.define "runner" do |runner|
+        runner.vm.box = "debian/bullseye64"
+        runner.vm.provider "virtualbox" do |vb|
+            vb.memory = 2048
+            vb.cpus = 2
+      end
+      runner.vm.hostname = "runner"
+      runner.vm.network "private_network", ip: "10.0.0.15", netmask:"255.255.255.0"
+      runner.vm.provision "shell", path: "./debian11-setup.sh"
+      runner.vm.provision "shell", path: "./provision-runner.sh"
+    end
     config.vm.define "shepherd" do |shepherd|
         shepherd.vm.box = "debian/bullseye64"
         shepherd.vm.provider "virtualbox" do |vb|
