@@ -22,16 +22,16 @@ Vagrant.configure("2") do |config|
       shepherd.vm.provision "shell", path: "./provision-shepherd.sh"
     end
     (1..2).each do |i|
-        config.vm.define "herd#{i}" do |herd#{i}|
-            herd1.vm.box = "debian/bullseye64"
-            herd1.vm.provider "virtualbox" do |vb|
+        config.vm.define "herd#{i}" do |node|
+            node.vm.box = "debian/bullseye64"
+            node.vm.provider "virtualbox" do |vb|
                 vb.memory = 2048
                 vb.cpus = 2
         end
-        herd1.vm.hostname = "herd#{i}"
-        herd1.vm.network "private_network", ip: "10.0.0.#{16+i}", netmask:"255.255.255.0"
-        herd1.vm.provision "shell", path: "./debian11-setup.sh"
-        herd1.vm.provision "shell", path: "./provision-herd.sh"
+        node.vm.hostname = "herd#{i}"
+        node.vm.network "private_network", ip: "10.0.0.#{16+i}", netmask:"255.255.255.0"
+        node.vm.provision "shell", path: "./debian11-setup.sh"
+        node.vm.provision "shell", path: "./provision-herd.sh"
         end
     end
 end
