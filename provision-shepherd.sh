@@ -19,11 +19,4 @@ k0s token create --role=worker > /vagrant/k0s_worker
 curl https://github.com/k0sproject/k0sctl/releases/download/v0.15.0/k0sctl-linux-x64 --output /usr/bin/k0sctl
 chmod +x /usr/bin/k0sctl
 
-# Load Aqua tools
-apt -y install python python3-pip
-pip install kube-hunter
-
-k0s kubeconfig admin > kubeconfig
-kube-hunter --kubeconfig kubeconfig --cidr 10.0.0.0/24 --enable-cve-hunting
-
 echo "--- debian11-shepherd.sh - end ---"
