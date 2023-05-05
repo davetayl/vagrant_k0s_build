@@ -2,7 +2,7 @@
 This is a basic k0s based cluster build in a Vagrant environment. IT is intended as a simplified base for development on the Kubernetes platform.
 
 ## Usage
-- Set up a <a href="https://www.vagrantup.com/">Vagrant</a> environment with <a href="https://www.virtualbox.org/">virtualbox</a> as teh virtualisation provider.
+- Set up a <a href="https://www.vagrantup.com/">Vagrant</a> environment with <a href="https://www.virtualbox.org/">virtualbox</a> as the virtualisation provider.
 - Clone the repo using ```git clone <repo url>```
 - cd to the repo directory and run ```vagrant up```
 - Then to access the CLI run ```vagrant ssh shepherd```
