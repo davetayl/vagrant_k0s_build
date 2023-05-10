@@ -20,3 +20,10 @@ curl https://github.com/k0sproject/k0sctl/releases/download/v0.15.0/k0sctl-linux
 chmod +x /usr/bin/k0sctl
 
 echo "--- debian11-shepherd.sh - end ---"
+
+# Load Kubernetes dashboard UI
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.7.0/aio/deploy/recommended.yaml
+
+
+# Insert any pod deployments blow this line using
+# k0s kubectl apply -f <manifest.yaml> 
