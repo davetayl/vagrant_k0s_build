@@ -23,7 +23,7 @@ Vagrant.configure("2") do |config|
     #   lb.vm.provision "shell", path: "./debian11-setup.sh"
     #   lb.vm.provision "shell", path: "./provision-lb.sh"
     # end
-    (1..1).each do |i|
+    (1..3).each do |i|
         config.vm.define "worker#{i}" do |node|
             node.vm.box = "debian/bullseye64"
             node.vm.provider "virtualbox" do |vb|

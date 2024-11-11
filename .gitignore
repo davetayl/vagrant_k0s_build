@@ -1,3 +1,4 @@
 .vagrant
+kubeconfig
 k0s_worker
 k0token
