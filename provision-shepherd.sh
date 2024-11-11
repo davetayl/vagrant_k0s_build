@@ -6,14 +6,15 @@ echo "export PATH=\$PATH:/usr/local/bin" | tee -a /etc/profile
 source /etc/profile
 mkdir -p /etc/k0s
 ln -s /vagrant/k0s.yaml /etc/k0s/k0s.yaml
-# k0s install controller --enable-worker
 k0s install controller -c /etc/k0s/k0s.yaml
 k0s start
 systemctl enable --now k0scontroller
 sleep 5
+k0s kubeconfig admin > /vagrant/kubeconfig
+
 echo "------------- k0s status -------------"
 k0s status
-echo "alias kubectl=\"k0s kubectl\"" >> /etc/profile
+
 # Set up tokens for workers.
 k0s token create --role=worker > /vagrant/k0s_worker
 cat /var/lib/k0s/pki/admin.conf > /vagrant/kubeconfig

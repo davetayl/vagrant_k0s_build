@@ -9,6 +9,8 @@ spec:
     port: 6443
     sans:
     - 10.0.0.16
+    - fe80::a00:27ff:fe8d:c04d
+    - fe80::a00:27ff:fedb:254e
   controllerManager: {}
   extensions:
     helm:
