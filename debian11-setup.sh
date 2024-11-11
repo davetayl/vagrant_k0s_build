@@ -12,7 +12,6 @@ ff02::2         ip6-allrouters
 
 127.0.1.1       $HOSTNAME $HOSTNAME
 10.0.0.16       master
-10.0.0.17       lb
 10.0.0.18       worker1
 10.0.0.19       worker2
 10.0.0.20       worker3
