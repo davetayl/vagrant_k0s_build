@@ -27,14 +27,4 @@ chmod 700 get_helm.sh
 k0s kubeconfig admin > /etc/k0s/kubeconfig
 echo "--- Helm install complete ---"
 
-# Deploy an nginx application
-# k0s kubectl apply -f /vagrant/nginx-deploy.yaml
-
-# Load nginx ingress controllerwith helm
-# https://kubernetes.github.io/ingress-nginx/deploy/
-# helm --kubeconfig /etc/k0s/kubeconfig upgrade --install ingress-nginx ingress-nginx --repo https://kubernetes.github.io/ingress-nginx --namespace ingress-nginx --create-namespace
-
-# Insert any pod deployments blow this line using
-# k0s kubectl apply -f <manifest.yaml>
-
 echo "--- debian11-master.sh - end ---"
